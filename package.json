@@ -1,0 +1,16 @@
+{
+  "name": "momo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es-module-lexer": "^1.7.0",
+    "magic-string": "^0.30.17"
+  }
+}
