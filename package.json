@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/parser": "^7.28.0",
+    "@babel/traverse": "^7.28.0",
     "es-module-lexer": "^1.7.0",
     "magic-string": "^0.30.17"
   }
