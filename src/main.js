@@ -1,3 +1,5 @@
 const messageModule = require('./message.js')
+const listenModule = require('./listen.js')
 console.log('module: ', exports)
 console.log(messageModule.content)
+console.log(listenModule.listenTest('hello listen'))

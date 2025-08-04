@@ -1,5 +1,7 @@
-const message = 'hello, this is from message.js'
+const stringUtil = require('./util/StringUtil.js')
+
 console.log('module: ', module)
+
 module.exports = {
-  content: message,
+  content: stringUtil.format('hello', 'message '),
 }
