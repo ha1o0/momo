@@ -59,6 +59,7 @@ function bundle(entryPath, distPath) {
     const escapedEntryPath = entryPath.replace(/\\/g, '\\\\');
     let bundleContent = '';
     bundleContent = `
+    (function() {
         const modules = {
             ${moduleString}
         };
@@ -71,6 +72,7 @@ function bundle(entryPath, distPath) {
         }
 
         require('${escapedEntryPath}');
+    })();
     `;
 
     if (!fs.existsSync(distPath)) {
@@ -79,6 +81,6 @@ function bundle(entryPath, distPath) {
     fs.writeFileSync(path.resolve(distPath, 'bundle.js'), bundleContent);
 }
 
-const entryPath = path.resolve(__dirname, 'src/main.js');
+const entryPath = path.resolve(__dirname, 'src/index.js');
 const distPath = path.resolve(__dirname, 'dist');
 bundle(entryPath, distPath);
