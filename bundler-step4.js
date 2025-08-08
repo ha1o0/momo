@@ -63,10 +63,15 @@ function bundle(entryPath, distPath) {
         const modules = {
             ${moduleString}
         };
-
+        const cache = {}
         function require(modulePath) {
+            if (cache[modulePath]) {
+                return cache[modulePath].exports;
+            }
             const moduleFn = modules[modulePath];
             const module = { exports: {} };
+            // fix loop ref
+            cache[modulePath] = module;
             moduleFn(module, module.exports, require);
             return module.exports;
         }
